@@ -17,18 +17,6 @@ Details As screen:
         Y: =34
         ZIndex: =1
 
-    Label5 As label:
-        BorderColor: =RGBA(89, 0, 0, 1)
-        Color: =RGBA(0, 0, 0, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
-        Height: =35
-        Size: =13
-        Text: =Concatenate("Created by ",item.'Created By'.DisplayName, " on" ,item.Created)
-        Width: =419
-        X: =914
-        Y: =36
-        ZIndex: =2
-
     HtmlText1 As htmlViewer:
         Height: =539
         HtmlText: =item.Content
