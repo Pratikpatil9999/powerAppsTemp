@@ -1,0 +1,35 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://india-001.azure-apim.net/apim/conversionservice" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="ContentConversion" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Content Conversion">A service that allows content to be converted from one format to another.</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://india-001.azure-apim.net/apim/conversionservice" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="HtmlToTextRequest" />
+      <string name="HtmlToTextResponse" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://india-001.azure-apim.net/apim/conversionservice">
+    <resource path="/{connectionId}/html2text">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="HtmlToText" actionName="HtmlToText" visibility="important" siena:isDeprecated="false">
+        <doc title="Html to text&#xA;Converts an HTML document to plain text." />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="Content" path="" type="xs:string" required="true">
+              <doc title="The HTML document to be converted to plain text." />
+            </param>
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="xs:string" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_conversionservice" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

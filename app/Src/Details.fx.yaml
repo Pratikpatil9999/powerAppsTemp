@@ -1,0 +1,83 @@
+Details As screen:
+    Fill: =RGBA(234, 234, 234, 1)
+    LoadingSpinnerColor: =RGBA(164, 38, 44, 1)
+
+    Label4 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Courier New'
+        FontWeight: =FontWeight.Bold
+        Height: =73
+        Size: =15
+        Text: =item.Title
+        Width: =722
+        X: =170
+        Y: =34
+        ZIndex: =1
+
+    Label5 As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Height: =35
+        Size: =13
+        Text: =Concatenate("Created by ",item.'Created By'.DisplayName, " on" ,item.Created)
+        Width: =419
+        X: =914
+        Y: =36
+        ZIndex: =2
+
+    HtmlText1 As htmlViewer:
+        Height: =539
+        HtmlText: =item.Content
+        Size: =13
+        Width: =1145
+        X: =121
+        Y: =144
+        ZIndex: =4
+
+    Icon3 As icon.Trash:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        DisplayMode: =If(User().Email=item.'Created By'.Email,DisplayMode.Edit,DisplayMode.Disabled)
+        Height: =35
+        Icon: =Icon.Trash
+        OnSelect: |-
+            = Remove(Blogs,{ID:item.ID});Navigate('All Blogs')
+        Width: =50
+        X: =1232
+        Y: =92
+        ZIndex: =6
+
+    Icon4 As icon.BackArrow:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =35
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('All Blogs')
+        Width: =50
+        X: =42
+        Y: =39
+        ZIndex: =7
+
+    Icon5 As icon.Draw:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        DisplayMode: =If(User().Email=item.'Created By'.Email,DisplayMode.Edit,DisplayMode.Disabled)
+        Height: =35
+        Icon: =Icon.Draw
+        OnSelect: |-
+            =Navigate(Edit,ScreenTransition.Cover,{data:item})
+        Width: =50
+        X: =1152
+        Y: =92
+        ZIndex: =8
+

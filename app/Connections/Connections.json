@@ -1,0 +1,50 @@
+{
+  "40f7583e-f035-49ea-8851-99974e1b1de1": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/juanq/gateway/greyhound/3000.150.11/1.0.1613.3116/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://zensar-my.sharepoint.com/personal/p_patil7_zensar_com": {
+        "dataSources": {
+          "Blogs": {
+            "tableName": "617d1d6e-c866-4a3e-952b-006645025252"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Blogs"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "40f7583e-f035-49ea-8851-99974e1b1de1"
+  },
+  "a83b1b32-60d6-4293-a3ae-16e6d93dd212": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Content Conversion",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1595/1.0.1595.2986/conversionservice/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_conversionservice",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "ContentConversion"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "a83b1b32-60d6-4293-a3ae-16e6d93dd212"
+  }
+}
